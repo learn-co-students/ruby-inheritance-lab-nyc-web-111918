@@ -3,18 +3,31 @@
 require_relative "../lib/user.rb"
 require_relative "../lib/teacher.rb"
 require_relative "../lib/student.rb"
+require 'pry'
 
 steve = Student.new
 steve.first_name = "Steve"
 steve.last_name = "Jobs"
+
+matty = Student.new
+matty.first_name = "Matty"
+matty.last_name = "Mattheson"
 
 avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
 
-some_knowledge = avi.teach 
+jim = User.new
+jim.first_name = "Jim"
+jim.last_name = "Jimothy"
+
+#binding.pry
+
+some_knowledge = avi.teach
 
 steve.learn(some_knowledge)
-
 puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+
+matty.learn(some_knowledge)
+puts "Matty just learned this important knowledge: '#{matty.knowledge.first}' from Avi"
